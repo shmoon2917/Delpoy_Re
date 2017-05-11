@@ -11,7 +11,8 @@ Devise.setup do |config|
  config.secret_key = 'cf766e6b04b3c812ffa3c3d0038ee5ebcaad9e3cfea3b22caafd41c947f80d03a86959aab457f80623f8a0ba94083e197f07054eed1e238e55b4a6ce05339023'
 
   
-  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45"
+  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45",
+                  callback_url: "http://13.124.70.40:3000/users/auth/facebook/callback"
 
   # config.omniauth :naver, "key", "secret"
   # config.omniauth :google_oauth2, "key", "secret"
