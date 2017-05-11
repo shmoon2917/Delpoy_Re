@@ -65,6 +65,7 @@
 						        <th>e.mail</th>
 						        <th>name</th>
 						        <th>phone number</th>
+                    <th>destroy</th>
 						      </tr>
 						    </thead>
 						    <tbody>
@@ -77,11 +78,12 @@
 						    					일반
 						    				<%end%>
 						    			</td>
-			                        	<td><%=p.email%></td>
-			                        	<td><%=p.username%></td>
-			                        	<td><%=p.phone%> <a href='/admin_destroy?id=<%=p.id%>'>삭제</a></td>
-		                    		</tr>
-		                		<%end%>
+                      <td><%=p.email%></td>
+                      <td><%=p.username%></td>
+                      <td><%=p.phone%></td>
+                      <td><a href='/admin_destroy?id=<%=p.id%>'>삭제</a></td>
+                    </tr>
+                  <%end%>
 					    	</tbody>
 						</table>
                     </div>

@@ -65,19 +65,21 @@
 						        <th>name</th>
 						        <th>region</th>
 						        <th>phone number</th>
+                    <th>destroy</th>
 						      </tr>
 						    </thead>
 						    <tbody>
 						    	<% @all_mentors.each do |p|%>
 						    		<%if p.grade==2%>
 								    	<tr>
-				                        	<td><%=p.email%></td>
-				                        	<td><%=p.username%></td>
-				                        	<td><%=p.region%></td>
-				                        	<td><%=p.phone%> <a href='/down_grade?id=<%=p.id%>'>삭제</a></td>
-			                    		</tr>
-	                    			<%end%>
-		                		<%end%>
+                        <td><%=p.email%></td>
+                        <td><%=p.username%></td>
+                        <td><%=p.region%></td>
+                        <td><%=p.phone%></td>
+                        <td><a href='/down_grade?id=<%=p.id%>'>삭제</a></td>
+                      </tr>
+                      <%end%>
+                  <%end%>
 					    	</tbody>
 						</table>
                     </div>

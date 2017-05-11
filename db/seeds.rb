@@ -16,3 +16,6 @@ Region.create(region: '프라하')
 Region.create(region: '부다페스트')
 Region.create(region: '자그레브')
 Region.create(region: '마드리드')
+
+
+User.create()

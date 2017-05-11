@@ -6,14 +6,15 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   
   root 'home#index'
-  
 
+  get 'service' => 'home#service'
   get 'help' => 'home#help'
   get 'mypage' => 'home#mypage'
+
+
   get 'enroll_mentor' => 'home#enroll_mentor'
   post 'enroll_process' => 'home#enroll_process'
-  get 'admin' => 'home#admin'
-  get 'service' => 'home#service'
+
   post 'admit' => 'home#admit'
 
   get 'mypage/apply_status'=>'home#apply_status'
@@ -46,8 +47,7 @@ Rails.application.routes.draw do
   get 'mentoring_view' => 'mentoring#mentoring_view'
 
 
-  # admin_ page 
-  get 'admin_index' => 'home#admin_all'
+  # admin_ page
   get 'admin_all' =>'home#admin_all'
   get 'admin_mentor' =>'home#admin_mentor'
   get 'admin_apply' =>'home#admin_apply'

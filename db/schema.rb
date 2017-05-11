@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170204162940) do
     t.string   "period"
     t.text     "content"
     t.integer  "personal_id"
+    t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

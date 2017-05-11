@@ -25,6 +25,7 @@ class HomeController < ApplicationController
     mentor.period = params[:mentor_period]
     mentor.content = params[:mentor_content]
     mentor.personal_id = current_user.id
+    mentor.name = current_user.username
     mentor.save
     
     redirect_to '/'
@@ -46,9 +47,6 @@ class HomeController < ApplicationController
     redirect_to '/admin_apply'
   end
   
-  def admin_index  
-  end
-  
   def admin_all
     @all_users = User.all
   end
@@ -58,6 +56,9 @@ class HomeController < ApplicationController
   end
   
   def admin_apply
+
+    #enroll_process 에서 생성한 Mentor 를 가져옴.
+
     @mentor_request = Mentor.all
   end
   
@@ -68,9 +69,15 @@ class HomeController < ApplicationController
   end
   
   def down_grade
-    destroy_mentor = User.find(params[:id])
+
+    his_id = params[:id]
+    destroy_mentor = User.find(his_id)
     destroy_mentor.grade = 0
     destroy_mentor.save
+
+    destroy_mentor = RealMentor.find_by user_id: his_id
+    destroy_mentor.destroy
+
     redirect_to '/admin_mentor'
   end
   
